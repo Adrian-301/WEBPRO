@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        <div>
+            <h1>Profil Pribadi</h1>
+            <img src="https://wallpapers.com/images/hd/anonymous-profile-silhouette-b714qekh29tu1anb.jpg" width="20%">
+            <video width="30%" controls>
+                <source src="profiltelu.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div>
+            <h2>Tentang saya</h2>
+            <p>Halo! Saya adalah seorang pengembang web antusias dengan passion di bidang teknologi.</p>
+        </div>
+
+        <div>
+            <table border="1">
+                <tr>
+                    <th>Keterampilan</th>
+                    <th>Tingkat</th>
+                </tr>
+                <tr>
+                    <td>HTML</td>
+                    <td>Mahir</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>Menengah</td>
+                </tr>
+                <tr>
+                    <td>JS</td>
+                    <td>Pemula</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <form>
+                <h2>Hubungi Saya</h2>
+                <label>Nama:</label>
+                    <input type="text"> <br/>
+                <label>Email:</label>
+                    <input type="email"> <br/>
+                <label>Pesan:</label>
+                    <textarea></textarea> </br>
+                <button>Kirim Pesan</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>Media Sosial:</h2>
+            <a href="https://www.linkedin.com/in/adrian-rifqi-ghiffari-094105294/">Linkedin</a>
+        </div>
+    </body>
+</html>
