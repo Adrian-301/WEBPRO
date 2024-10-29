@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShadePin</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for Dark Mode -->
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .navbar, .card {
+            background-color: #1e1e1e;
+            border: none;
+        }
+        .card img {
+            max-height: 200px;
+            object-fit: cover;
+        }
+        .toggle-darkmode {
+            cursor: pointer;
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ShadePin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link toggle-darkmode">Dark Mode</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Example cards -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">This is an example of a Pinterest-like card.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">This is an example of a Pinterest-like card.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">This is an example of a Pinterest-like card.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggle = document.querySelector('.toggle-darkmode');
+        const body = document.body;
+
+        // Function to toggle between Dark and Light mode
+        function updateMode() {
+            const isDarkMode = !body.classList.contains('light-mode');
+            toggle.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+        }
+
+        // Add event listener to toggle dark/light mode
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            updateMode();
+        });
+
+        // Light mode styles
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .light-mode {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            .light-mode .navbar, .light-mode .card {
+                background-color: #f8f9fa;
+                color: #000000;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize button text on page load
+        updateMode();
+    </script>
+
+</body>
+</html>
