@@ -25,7 +25,6 @@
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, box-shadow 0.3s;
         }
 
         .form-container.dark-mode {
@@ -57,15 +56,15 @@
         <div class="form-container" id="get-started-form">
             <h1>ShadePin</h1>
             <h2>Get Started</h2>
-            <form>
+            <form id="signup-form">
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Full Name" required>
+                    <input type="text" class="form-control" id="signup-name" placeholder="Full Name" required>
                 </div>
                 <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email" required>
+                    <input type="email" class="form-control" id="signup-email" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Password" required>
+                    <input type="password" class="form-control" id="signup-password" placeholder="Password" required>
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="terms">
@@ -79,12 +78,12 @@
         <!-- Sign In Form -->
         <div class="form-container" id="sign-in-form" style="display: none;">
             <h2>Welcome Back</h2>
-            <form>
+            <form id="signin-form">
                 <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email" required>
+                    <input type="email" class="form-control" id="signin-email" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Password" required>
+                    <input type="password" class="form-control" id="signin-password" placeholder="Password" required>
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="termsSignin">
@@ -97,8 +96,8 @@
     </div>
 
     <script>
-        // Toggle Dark Mode
         $(document).ready(function() {
+            // Toggle Dark Mode
             $('.toggle-btn').click(function() {
                 $('body').toggleClass('dark-mode');
                 $('.form-container').toggleClass('dark-mode');
@@ -115,6 +114,17 @@
             $('#switch-to-signup').click(function() {
                 $('#sign-in-form').hide();
                 $('#get-started-form').show();
+            });
+
+            // Simulate sign in/sign up and redirect to gallery
+            $('#signup-form').submit(function(e) {
+                e.preventDefault();
+                window.location.href = 'gallery.html'; // Redirect to gallery on successful sign up
+            });
+
+            $('#signin-form').submit(function(e) {
+                e.preventDefault();
+                window.location.href = 'gallery.html'; // Redirect to gallery on successful sign in
             });
         });
     </script>
