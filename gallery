@@ -31,6 +31,12 @@
             right: 20px;
         }
 
+        .logout-btn {
+            position: fixed;
+            top: 20px;
+            right: 70px;
+        }
+
         .dark-mode .card {
             background-color: #34495e;
         }
@@ -48,6 +54,7 @@
 </head>
 <body>
     <div class="container mt-4">
+        <button class="btn btn-secondary logout-btn">Logout</button>
         <button class="btn btn-secondary toggle-dark-mode">🌙</button>
         <h1 class="text-center">ShadePin</h1>
         <div class="text-center mb-4">
@@ -65,6 +72,11 @@
             $('.toggle-dark-mode').click(function() {
                 $('body').toggleClass('dark-mode');
                 $(this).text($(this).text() === '🌙' ? '🌞' : '🌙');
+            });
+
+            // Logout button functionality
+            $('.logout-btn').click(function() {
+                window.location.href = 'shadepin.html'; // Redirect to shadepin.html on logout
             });
 
             // Load images from localStorage
